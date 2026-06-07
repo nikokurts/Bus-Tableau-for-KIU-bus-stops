@@ -1,0 +1,286 @@
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+@keyframes headerFadeIn {
+    from {
+         opacity: 0; transform: translateY(-20px);
+         }
+    to {
+         opacity: 1; transform: translateY(0);
+         }
+}
+
+.app-container {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+header {
+    background: #1a73e8;
+    color: white;
+    padding: 24px;
+    text-align: center;
+    animation: headerFadeIn 0.8s ease-out;
+}
+
+header h1 {
+     margin: 0; font-size: 1.5rem;
+     }
+
+.header-images {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.header-images img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.header-images img:hover {
+    transform: scale(1.1);
+}
+
+header p {
+     margin: 8px 0 0; opacity: 0.9; font-size: 0.9rem;
+     }
+
+
+.author-tag {
+    font-size: 0.75rem;
+    font-style: italic;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+.controls {
+     padding: 20px; border-bottom: 1px solid #eee;
+     }
+h3 {
+     font-size: 0.9rem; color: #65676b; text-transform: uppercase; margin-bottom: 12px;
+     }
+
+.radio-buttons {
+     display: flex; gap: 10px; margin-bottom: 20px;
+     }
+
+.time-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8px;
+}
+
+.time-table td {
+     padding: 0;
+     }
+
+.btn {
+    display: block;
+    padding: 12px 5px;
+    background: #f0f2f5;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover { 
+    background: #e4e6eb; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.note {
+     font-size: 0.75rem; color: #888; margin-top: 10px;
+     }
+
+input[type="radio"] {
+     display: none;
+     }
+
+#stop-k:checked ~ .app-container label[for="stop-k"],
+#stop-d:checked ~ .app-container label[for="stop-d"] {
+    background: #e8f0fe;
+    border-color: #1a73e8;
+    color: #1a73e8;
+}
+
+#t00:checked ~ .app-container label[for="t00"],
+#t10:checked ~ .app-container label[for="t10"],
+#t20:checked ~ .app-container label[for="t20"],
+#t30:checked ~ .app-container label[for="t30"],
+#t40:checked ~ .app-container label[for="t40"],
+#t50:checked ~ .app-container label[for="t50"] {
+    background: #1c1e21;
+    color: white;
+}
+
+.display-area { 
+    padding: 20px; 
+    min-height: 180px; 
+    background: #fafafa; 
+    border-bottom: 1px solid #eee; 
+}
+
+.info-card {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+    padding: 15px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: scale(1.02);
+}
+
+@keyframes fadeIn {
+    from {
+         opacity: 0; transform: translateY(10px);
+         }
+    to {
+         opacity: 1; transform: translateY(0);
+         }
+}
+
+.status-header {
+    font-weight: bold;
+    color: #188038;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e6f4ea;
+}
+
+.bus-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.bus-badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+.n3 {
+     background: #d93025;
+     }
+.n25 {
+     background: #f29900;
+     }
+
+.bus-row p {
+     margin: 0; font-size: 0.95rem; line-height: 1.4;
+     }
+
+.contact-section {
+     padding: 20px; background: #fff;
+     }
+
+.form-row {
+     display: flex; gap: 10px; margin-bottom: 10px;
+     }
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover { 
+    background: #1557b0; 
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.3);
+}
+
+footer {
+     padding: 15px; text-align: center; font-size: 0.75rem; color: #bcc0c4; border-top: 1px solid #eee;
+     }
+
+@media (max-width: 768px) {
+    body {
+         padding: 10px;
+         }
+    .app-container {
+         border-radius: 0;
+         }
+    .form-row {
+         flex-direction: column; gap: 0;
+         }
+    .radio-buttons {
+         flex-direction: column;
+         }
+    .btn {
+         padding: 15px 5px;
+         }
+    .header-images img {
+         width: 80px; height: 80px;
+         }
+}
+
+#stop-k:checked ~ #t00:checked ~ .app-container .msg-origin,
+#stop-k:checked ~ #t30:checked ~ .app-container .msg-origin,
+#stop-k:checked ~ #t10:checked ~ .app-container .msg-arrival,
+#stop-k:checked ~ #t40:checked ~ .app-container .msg-arrival,
+#stop-k:checked ~ #t20:checked ~ .app-container .msg-departure,
+#stop-k:checked ~ #t50:checked ~ .app-container .msg-departure,
+#stop-d:checked ~ #t20:checked ~ .app-container .msg-origin,
+#stop-d:checked ~ #t50:checked ~ .app-container .msg-origin,
+#stop-d:checked ~ #t00:checked ~ .app-container .msg-arrival,
+#stop-d:checked ~ #t30:checked ~ .app-container .msg-arrival,
+#stop-d:checked ~ #t10:checked ~ .app-container .msg-departure,
+#stop-d:checked ~ #t40:checked ~ .app-container .msg-departure 
+{
+    display: block;
+}
