@@ -3,123 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bus Tracker</title>
+    <title>Bus Arrival Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     
-    <!--Types of inputs for bus station buttons-->
-    <input type="radio" name="stop" id="stop-k" checked>
-    <input type="radio" name="stop" id="stop-d">
 
-    <!--Types of inputs for time slot buttons-->
-    <input type="radio" name="time" id="t00" checked>
-    <input type="radio" name="time" id="t10">
-    <input type="radio" name="time" id="t20">
-    <input type="radio" name="time" id="t30">
-    <input type="radio" name="time" id="t40">
-    <input type="radio" name="time" id="t50">
+<div class="container">
 
-    <!--Mother div-->
-    <div class="app-container">
-        <!--Header section-->
-        <header>
-            <h1>Bus Schedule Tracker</h1>
-            <div class="header-images">
-                <img src="image1.jpg" alt="Bus 1">
-                <img src="image2.jpeg" alt="Bus 2">
-                <img src="image3.jpg" alt="Bus 3">
-            </div>
+    <h1>KIU Bus Tableau</h1>
+    <p class="subtitle">
+        Arrival times are approximate and may vary depending on traffic conditions.
+    </p>
 
-            <p>Real-time estimation based on schedule</p>
-            <p class="author-tag">made by Nikoloz Kurtsikidze</p>
-        </header>
-
-        <!--Control buttons section-->
-        <section class="controls">
-            <!--Controlling bus stops-->
-            <div class="control-group">
-                <h3>1. Select Reference Stop</h3>
-                <div class="radio-buttons">
-                    <label for="stop-k" class="btn">Near K Campus</label>
-                    <label for="stop-d" class="btn">Near Dorms</label>
-                </div>
-            </div>
-
-            <!--Controlling time slots-->
-            <div class="control-group">
-                <h3>2. Select Current Time</h3>
-                <table class="time-table">
-                    <tr>
-                        <td><label for="t00" class="btn">XX:00</label></td>
-                        <td><label for="t10" class="btn">XX:10</label></td>
-                        <td><label for="t20" class="btn">XX:20</label></td>
-                    </tr>
-                    <tr>
-                        <td><label for="t30" class="btn">XX:30</label></td>
-                        <td><label for="t40" class="btn">XX:40</label></td>
-                        <td><label for="t50" class="btn">XX:50</label></td>
-                    </tr>
-                </table>
-                <p class="note">Schedule valid 08:00 - 22:00</p>
-            </div>
-        </section>
-
-        <!--Output area and variations of output depending on chosen controls-->
-        <section class="display-area">
-            <div class="info-card msg-origin">
-                <div class="bus-row">
-                    <span class="bus-badge n3">Bus N3</span>
-                    <p>On its way from <strong>Rioni Station</strong>.</p>
-                </div>
-                <div class="bus-row">
-                    <span class="bus-badge n25">Bus N25</span>
-                    <p>On its way from <strong>Youth Av. 5</strong>.</p>
-                </div>
-            </div>
-
-            <div class="info-card msg-arrival">
-                <div class="status-header">Arriving Soon / At Stop</div>
-                <div class="bus-row">
-                    <span class="bus-badge n3">Bus N3</span>
-                    <p>Nearing the stop or currently boarding.</p>
-                </div>
-                <div class="bus-row">
-                    <span class="bus-badge n25">Bus N25</span>
-                    <p>Nearing the stop or currently boarding.</p>
-                </div>
-            </div>
-
-            <div class="info-card msg-departure">
-                <div class="bus-row">
-                    <span class="bus-badge n3">Bus N3</span>
-                    <p>Departed. Heading to <strong>Rioni Station</strong>.</p>
-                </div>
-                <div class="bus-row">
-                    <span class="bus-badge n25">Bus N25</span>
-                    <p>Departed. Heading to <strong>Youth Av. 5</strong>.</p>
-                </div>
-            </div>
-        </section>
-
-        <!--Contact forms-->
-        <section class="contact-section">
-            <h3>Contact Support</h3>
-            <form action="#">
-                <div class="form-row">
-                    <input type="text" placeholder="First Name" required>
-                    <input type="text" placeholder="Last Name" required>
-                </div>         
-                <input type="email" placeholder="Email Address" required>
-                <textarea placeholder="Questions or concerns" rows="4"></textarea>
-                <button type="submit" class="submit-btn">Submit Request</button>
-            </form>
-        </section>
-
-        <footer>
-            <p>@ Bus Tracker KIU 2026</p>
-        </footer>
+    <div class="gallery">
+    <img src="image1.jpg" alt="Bus Picture 1">
+    <img src="image2.jpeg" alt="Bus Picture 2">
+    <img src="image3.jpg" alt="Bus Picture 3">
     </div>
+
+    <div class="section">
+        <label for="time">Current Time</label>
+        <input
+            type="text"
+            id="time"
+            placeholder="HH:MM"
+            pattern="^([01]\d|2[0-3]):([0-5]\d)$"
+            maxlength="5"
+            required
+        >
+    </div>
+
+    <div class="section">
+        <label for="stop">Bus Stop</label>
+        <select id="stop">
+            <option value="">Select a bus stop</option>
+            <option value="K">Bus stop near K campus</option>
+            <option value="Dorms">Bus stop near Dorms</option>
+        </select>
+    </div>
+
+    <div class="section">
+        <button id="showBtn">Show</button>
+    </div>
+
+    <div id="output">
+        <h2>Arrival Information</h2>
+        <p>Arrival information will be displayed here.</p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
